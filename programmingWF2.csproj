@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Cleaning.cs" />
     <Compile Include="Costs.cs" />
+    <Compile Include="Data.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>

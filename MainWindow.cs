@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Windows.Forms;
 
 namespace programmingWF2
@@ -9,6 +10,7 @@ namespace programmingWF2
     {
         private List<Cleaning> ServicesArr = new List<Cleaning>();
         private static Random rand = new Random();
+        internal Data data = new Data();
         internal static double balance = 0;
         public MainWindow()
         {
@@ -26,7 +28,6 @@ namespace programmingWF2
             textBoxPrice3.Text = "";
             textBoxPrice4.Text = "";
             textBoxPrice5.Text = "";
-            resetServicesArr(true);
         }
         private void resetCosts()
         {
@@ -46,7 +47,6 @@ namespace programmingWF2
             textBoxCosts6.Text = "";
             textBoxCosts7.Text = "";
             textBoxCosts8.Text = "";
-            resetServicesArr(false);
         }
         private void resetServicesArr(bool flag)
         {
@@ -93,6 +93,7 @@ namespace programmingWF2
         private void buttonPriceReset_Click(object sender, EventArgs e)
         {
             resetPrice();
+            resetServicesArr(true);
         }
         private void buttonCostsAccept_Click(object sender, EventArgs e)
         {
@@ -150,6 +151,7 @@ namespace programmingWF2
         private void buttonCostsReset_Click(object sender, EventArgs e)
         {
             resetCosts();
+            resetServicesArr(false);
         }
         private void buttonStart_Click(object sender, EventArgs e)
         {
@@ -184,7 +186,7 @@ namespace programmingWF2
                 richTextBox1.AppendText($"Выручка за день: {sumPriceDay}, количество клиентов за день: {j}\n");
                 sumPriceMonth += sumPriceDay;
                 sumClientMonth += j;
-                labelIncomeAll.Text = $"{sumPriceDay} руб.";
+                labelIncomeToday.Text = $"{sumPriceDay} руб.";
                 labelClientToday.Text = $"{j} чел.";
                 if (i % 30 != 0) continue;
 
@@ -220,6 +222,7 @@ namespace programmingWF2
                                     $"Суммарная прибыль за всё время: {sumPriceAll - sumCostsAll}");
 
             labelIncomeAll.Text = $"{sumCostsAll} руб.";
+            labelCostsAll.Text = $"{sumCostsAll} руб.";
             labelClientAll.Text = $"{sumClientAll} чел.";
             labelIncomeAvg.Text = $"{Math.Round(sumCostsAll / day)} руб.";
             labelClientAvg.Text = $"{Math.Round(sumClientAll / day)} чел.";
@@ -227,9 +230,169 @@ namespace programmingWF2
         }
         private void buttonReset_Click(object sender, EventArgs e)
         {
+            balance = 0;
+            labelBalance.Text = "";
             richTextBox1.Text = "";
-        }
 
+            labelIncomeAll.Text = "0 руб.";
+            labelIncomeMonth.Text = "0 руб.";
+            labelIncomeToday.Text = "0 руб.";
+            labelIncomeAvg.Text = "0 руб.";
+
+            labelClientAll.Text = "0 чел.";
+            labelClientMonth.Text = "0 чел.";
+            labelClientToday.Text = "0 чел.";
+            labelClientAvg.Text = "0 чел.";
+
+            labelCostsAll.Text = "0 руб.";
+            labelCostsMonth.Text = "0 руб.";
+        }
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            /*Диалоговое окно сохранения файла*/
+            var saveFileDialog = new SaveFileDialog
+            {
+                Filter = "bin files (*.bin)|*.bin"
+            };
+
+            if (saveFileDialog.ShowDialog() != DialogResult.OK) return;
+            /*Сериализация*/
+
+            data.ServicesArr = ServicesArr;
+            data.text = richTextBox1.Text;
+
+            data.Balance = balance;
+
+            data.priceAll = labelIncomeAll.Text;
+            data.priceMonth = labelIncomeMonth.Text;
+            data.priceToday = labelIncomeToday.Text;
+            data.priceAvg = labelIncomeAvg.Text;
+
+            data.clientAll = labelClientAll.Text;
+            data.clientMonth = labelClientMonth.Text;
+            data.clientToday = labelClientToday.Text;
+            data.clientAvg = labelClientAvg.Text;
+
+            data.costsAll = labelCostsAll.Text;
+            data.costsMonth = labelCostsMonth.Text;
+
+            using (var fs = saveFileDialog.OpenFile())
+            {
+                var formatter = new BinaryFormatter();
+                formatter.Serialize(fs, data);
+                MessageBox.Show("Состояние успешно сохранено.", "Сохранение состояния", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void buttonLoad_Click(object sender, EventArgs e)
+        {
+            /*Диалоговое окно открытия файла*/
+            var openFileDialog = new OpenFileDialog()
+            {
+                Filter = "bin files (*.bin)|*.bin"
+            };
+
+            while (true)
+            {
+                if (openFileDialog.ShowDialog(this) != DialogResult.OK) return;
+
+                try
+                {
+                    /*Десериализация*/
+                    using (var fs = openFileDialog.OpenFile())
+                    {
+                        var formatter = new BinaryFormatter();
+                        data = (Data)formatter.Deserialize(fs);
+                    }
+
+                    ServicesArr = data.ServicesArr;
+                    richTextBox1.Text = data.text;
+
+                    balance = data.Balance;
+
+                    labelIncomeAll.Text = data.priceAll;
+                    labelIncomeMonth.Text = data.priceMonth;
+                    labelIncomeToday.Text = data.priceToday;
+                    labelIncomeAvg.Text = data.priceAvg;
+
+                    labelClientAll.Text = data.clientAll;
+                    labelClientMonth.Text = data.clientMonth;
+                    labelClientToday.Text = data.clientToday;
+                    labelClientAvg.Text = data.clientAvg;
+
+                    labelCostsAll.Text = data.costsAll;
+                    labelCostsMonth.Text = data.costsMonth;
+
+                    resetPrice();
+                    resetCosts();
+
+                    foreach (var elm in ServicesArr)
+                    {
+                        switch (elm.service)
+                        {
+                            case "Чистка одежды из замши, меха, кожи, текстиля, пуховиков":
+                                checkBoxPrice1.Checked = true;
+                                textBoxPrice1.Text = elm.price.ToString();
+                                break;
+                            case "Чистка постельных принадлежностей, ковров":
+                                checkBoxPrice2.Checked = true;
+                                textBoxPrice2.Text = elm.price.ToString();
+                                break;
+                            case "Чистка игрушек":
+                                checkBoxPrice3.Checked = true;
+                                textBoxPrice3.Text = elm.price.ToString();
+                                break;
+                            case "Ручная чистка сумок и обуви":
+                                checkBoxPrice4.Checked = true;
+                                textBoxPrice4.Text = elm.price.ToString();
+                                break;
+                            case "Прачечные услуги":
+                                checkBoxPrice5.Checked = true;
+                                textBoxPrice5.Text = elm.price.ToString();
+                                break;
+                            case "Фонд оплаты труда":
+                                checkBoxCosts1.Checked = true;
+                                textBoxCosts1.Text = elm.price.ToString();
+                                break;
+                            case "Аренда":
+                                checkBoxCosts2.Checked = true;
+                                textBoxCosts2.Text = elm.price.ToString();
+                                break;
+                            case "Амортизация":
+                                checkBoxCosts3.Checked = true;
+                                textBoxCosts3.Text = elm.price.ToString();
+                                break;
+                            case "Коммунальные услуги":
+                                checkBoxCosts4.Checked = true;
+                                textBoxCosts4.Text = elm.price.ToString();
+                                break;
+                            case "Реклама":
+                                checkBoxCosts5.Checked = true;
+                                textBoxCosts5.Text = elm.price.ToString();
+                                break;
+                            case "Бухгалтерия":
+                                checkBoxCosts6.Checked = true;
+                                textBoxCosts6.Text = elm.price.ToString();
+                                break;
+                            case "Закупка спец. средств":
+                                checkBoxCosts7.Checked = true;
+                                textBoxCosts7.Text = elm.price.ToString();
+                                break;
+                            case "Непредвиденные расходы":
+                                checkBoxCosts8.Checked = true;
+                                textBoxCosts8.Text = elm.price.ToString();
+                                break;
+                        }
+                    }
+
+                    MessageBox.Show("Состояние успешно загружено.", "Загрузка состояния", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                /*Если произошла ошибка во время десериализации*/
+                catch (System.Runtime.Serialization.SerializationException)
+                {
+                    MessageBox.Show("Неправильный файл сериализации");
+                }
+            }
+        }
         private void checkBoxPrice1_CheckedChanged(object sender, EventArgs e)
         {
             textBoxPrice1.Enabled = checkBoxPrice1.Checked;

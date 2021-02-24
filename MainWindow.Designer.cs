@@ -107,10 +107,9 @@ namespace programmingWF2
             this.numericUpDown = new System.Windows.Forms.NumericUpDown();
             this.label27 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonLoad = new System.Windows.Forms.Button();
-            this.buttonSaveTable = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPageIndicators.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -945,15 +944,6 @@ namespace programmingWF2
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(538, 35);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(250, 250);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // buttonSave
             // 
             this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -963,6 +953,7 @@ namespace programmingWF2
             this.buttonSave.TabIndex = 2;
             this.buttonSave.Text = "Сохранить состояние";
             this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
             // 
             // buttonLoad
             // 
@@ -973,23 +964,23 @@ namespace programmingWF2
             this.buttonLoad.TabIndex = 3;
             this.buttonLoad.Text = "Загрузить состояние";
             this.buttonLoad.UseVisualStyleBackColor = true;
+            this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
             // 
-            // buttonSaveTable
+            // pictureBox1
             // 
-            this.buttonSaveTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSaveTable.Location = new System.Drawing.Point(538, 374);
-            this.buttonSaveTable.Name = "buttonSaveTable";
-            this.buttonSaveTable.Size = new System.Drawing.Size(250, 36);
-            this.buttonSaveTable.TabIndex = 4;
-            this.buttonSaveTable.Text = "Сохранить как таблицу";
-            this.buttonSaveTable.UseVisualStyleBackColor = true;
+            this.pictureBox1.Image = global::programmingWF2.Properties.Resources.img3;
+            this.pictureBox1.Location = new System.Drawing.Point(538, 35);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(250, 250);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.buttonSaveTable);
             this.Controls.Add(this.buttonLoad);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.pictureBox1);
@@ -1055,7 +1046,6 @@ namespace programmingWF2
         private System.Windows.Forms.CheckBox checkBoxPrice1;
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonLoad;
-        private System.Windows.Forms.Button buttonSaveTable;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.CheckBox checkBoxCosts8;
         private System.Windows.Forms.TextBox textBoxCosts8;

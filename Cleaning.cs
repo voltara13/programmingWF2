@@ -1,5 +1,8 @@
-﻿namespace programmingWF2
+﻿using System;
+
+namespace programmingWF2
 {
+    [Serializable]
     abstract class Cleaning
     {
         internal bool type;
