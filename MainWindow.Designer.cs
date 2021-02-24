@@ -41,25 +41,25 @@ namespace programmingWF2
             this.labelIncomeAvg = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.labelBalance = new System.Windows.Forms.Label();
-            this.label99 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.tabPagePrice = new System.Windows.Forms.TabPage();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBoxPrice5 = new System.Windows.Forms.TextBox();
+            this.textBoxPrice4 = new System.Windows.Forms.TextBox();
+            this.textBoxPrice3 = new System.Windows.Forms.TextBox();
+            this.textBoxPrice2 = new System.Windows.Forms.TextBox();
+            this.textBoxPrice1 = new System.Windows.Forms.TextBox();
+            this.buttonPriceReset = new System.Windows.Forms.Button();
+            this.buttonPriceAcept = new System.Windows.Forms.Button();
+            this.checkBoxPrice5 = new System.Windows.Forms.CheckBox();
+            this.checkBoxPrice4 = new System.Windows.Forms.CheckBox();
+            this.checkBoxPrice3 = new System.Windows.Forms.CheckBox();
+            this.checkBoxPrice2 = new System.Windows.Forms.CheckBox();
+            this.checkBoxPrice1 = new System.Windows.Forms.CheckBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.label39 = new System.Windows.Forms.Label();
             this.checkBox13 = new System.Windows.Forms.CheckBox();
@@ -74,16 +74,16 @@ namespace programmingWF2
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
+            this.checkBoxCosts1 = new System.Windows.Forms.CheckBox();
             this.checkBox9 = new System.Windows.Forms.CheckBox();
             this.checkBox8 = new System.Windows.Forms.CheckBox();
             this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.label36 = new System.Windows.Forms.Label();
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
+            this.buttonCostsAcept = new System.Windows.Forms.Button();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button6 = new System.Windows.Forms.Button();
+            this.buttonCostsReset = new System.Windows.Forms.Button();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
@@ -147,7 +147,7 @@ namespace programmingWF2
             this.tabPageIndicators.Controls.Add(this.groupBox2);
             this.tabPageIndicators.Controls.Add(this.groupBox1);
             this.tabPageIndicators.Controls.Add(this.labelBalance);
-            this.tabPageIndicators.Controls.Add(this.label99);
+            this.tabPageIndicators.Controls.Add(this.label13);
             this.tabPageIndicators.Location = new System.Drawing.Point(4, 22);
             this.tabPageIndicators.Name = "tabPageIndicators";
             this.tabPageIndicators.Padding = new System.Windows.Forms.Padding(3);
@@ -254,35 +254,35 @@ namespace programmingWF2
             this.labelBalance.TabIndex = 29;
             this.labelBalance.Text = "0 руб.";
             // 
-            // label99
+            // label13
             // 
-            this.label99.AutoSize = true;
-            this.label99.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label99.Location = new System.Drawing.Point(6, 422);
-            this.label99.Name = "label99";
-            this.label99.Size = new System.Drawing.Size(54, 13);
-            this.label99.TabIndex = 28;
-            this.label99.Text = "Баланс:";
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.Location = new System.Drawing.Point(6, 422);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(54, 13);
+            this.label13.TabIndex = 28;
+            this.label13.Text = "Баланс:";
             // 
             // tabPagePrice
             // 
-            this.tabPagePrice.Controls.Add(this.label31);
-            this.tabPagePrice.Controls.Add(this.label30);
-            this.tabPagePrice.Controls.Add(this.label29);
-            this.tabPagePrice.Controls.Add(this.label28);
-            this.tabPagePrice.Controls.Add(this.label27);
-            this.tabPagePrice.Controls.Add(this.textBox5);
-            this.tabPagePrice.Controls.Add(this.textBox4);
-            this.tabPagePrice.Controls.Add(this.textBox3);
-            this.tabPagePrice.Controls.Add(this.textBox2);
-            this.tabPagePrice.Controls.Add(this.textBox1);
-            this.tabPagePrice.Controls.Add(this.button5);
-            this.tabPagePrice.Controls.Add(this.button4);
-            this.tabPagePrice.Controls.Add(this.checkBox5);
-            this.tabPagePrice.Controls.Add(this.checkBox4);
-            this.tabPagePrice.Controls.Add(this.checkBox3);
-            this.tabPagePrice.Controls.Add(this.checkBox2);
-            this.tabPagePrice.Controls.Add(this.checkBox1);
+            this.tabPagePrice.Controls.Add(this.label18);
+            this.tabPagePrice.Controls.Add(this.label17);
+            this.tabPagePrice.Controls.Add(this.label16);
+            this.tabPagePrice.Controls.Add(this.label15);
+            this.tabPagePrice.Controls.Add(this.label14);
+            this.tabPagePrice.Controls.Add(this.textBoxPrice5);
+            this.tabPagePrice.Controls.Add(this.textBoxPrice4);
+            this.tabPagePrice.Controls.Add(this.textBoxPrice3);
+            this.tabPagePrice.Controls.Add(this.textBoxPrice2);
+            this.tabPagePrice.Controls.Add(this.textBoxPrice1);
+            this.tabPagePrice.Controls.Add(this.buttonPriceReset);
+            this.tabPagePrice.Controls.Add(this.buttonPriceAcept);
+            this.tabPagePrice.Controls.Add(this.checkBoxPrice5);
+            this.tabPagePrice.Controls.Add(this.checkBoxPrice4);
+            this.tabPagePrice.Controls.Add(this.checkBoxPrice3);
+            this.tabPagePrice.Controls.Add(this.checkBoxPrice2);
+            this.tabPagePrice.Controls.Add(this.checkBoxPrice1);
             this.tabPagePrice.Location = new System.Drawing.Point(4, 22);
             this.tabPagePrice.Name = "tabPagePrice";
             this.tabPagePrice.Padding = new System.Windows.Forms.Padding(3);
@@ -291,153 +291,153 @@ namespace programmingWF2
             this.tabPagePrice.Text = "Прайс-Лист";
             this.tabPagePrice.UseVisualStyleBackColor = true;
             // 
-            // label31
+            // label18
             // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(415, 123);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(27, 13);
-            this.label31.TabIndex = 16;
-            this.label31.Text = "руб.";
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(415, 123);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(27, 13);
+            this.label18.TabIndex = 16;
+            this.label18.Text = "руб.";
             // 
-            // label30
+            // label17
             // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(415, 94);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(27, 13);
-            this.label30.TabIndex = 15;
-            this.label30.Text = "руб.";
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(415, 94);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(27, 13);
+            this.label17.TabIndex = 15;
+            this.label17.Text = "руб.";
             // 
-            // label29
+            // label16
             // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(415, 65);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(27, 13);
-            this.label29.TabIndex = 14;
-            this.label29.Text = "руб.";
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(415, 65);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(27, 13);
+            this.label16.TabIndex = 14;
+            this.label16.Text = "руб.";
             // 
-            // label28
+            // label15
             // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(415, 36);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(27, 13);
-            this.label28.TabIndex = 13;
-            this.label28.Text = "руб.";
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(415, 36);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(27, 13);
+            this.label15.TabIndex = 13;
+            this.label15.Text = "руб.";
             // 
-            // label27
+            // label14
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(415, 7);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(27, 13);
-            this.label27.TabIndex = 12;
-            this.label27.Text = "руб.";
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(415, 7);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(27, 13);
+            this.label14.TabIndex = 12;
+            this.label14.Text = "руб.";
             // 
-            // textBox5
+            // textBoxPrice5
             // 
-            this.textBox5.Location = new System.Drawing.Point(346, 120);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(63, 20);
-            this.textBox5.TabIndex = 11;
+            this.textBoxPrice5.Location = new System.Drawing.Point(346, 120);
+            this.textBoxPrice5.Name = "textBoxPrice5";
+            this.textBoxPrice5.Size = new System.Drawing.Size(63, 20);
+            this.textBoxPrice5.TabIndex = 11;
             // 
-            // textBox4
+            // textBoxPrice4
             // 
-            this.textBox4.Location = new System.Drawing.Point(346, 91);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(63, 20);
-            this.textBox4.TabIndex = 10;
+            this.textBoxPrice4.Location = new System.Drawing.Point(346, 91);
+            this.textBoxPrice4.Name = "textBoxPrice4";
+            this.textBoxPrice4.Size = new System.Drawing.Size(63, 20);
+            this.textBoxPrice4.TabIndex = 10;
             // 
-            // textBox3
+            // textBoxPrice3
             // 
-            this.textBox3.Location = new System.Drawing.Point(346, 62);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(63, 20);
-            this.textBox3.TabIndex = 9;
+            this.textBoxPrice3.Location = new System.Drawing.Point(346, 62);
+            this.textBoxPrice3.Name = "textBoxPrice3";
+            this.textBoxPrice3.Size = new System.Drawing.Size(63, 20);
+            this.textBoxPrice3.TabIndex = 9;
             // 
-            // textBox2
+            // textBoxPrice2
             // 
-            this.textBox2.Location = new System.Drawing.Point(346, 33);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(63, 20);
-            this.textBox2.TabIndex = 8;
+            this.textBoxPrice2.Location = new System.Drawing.Point(346, 33);
+            this.textBoxPrice2.Name = "textBoxPrice2";
+            this.textBoxPrice2.Size = new System.Drawing.Size(63, 20);
+            this.textBoxPrice2.TabIndex = 8;
             // 
-            // textBox1
+            // textBoxPrice1
             // 
-            this.textBox1.Location = new System.Drawing.Point(346, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(63, 20);
-            this.textBox1.TabIndex = 7;
+            this.textBoxPrice1.Location = new System.Drawing.Point(346, 4);
+            this.textBoxPrice1.Name = "textBoxPrice1";
+            this.textBoxPrice1.Size = new System.Drawing.Size(63, 20);
+            this.textBoxPrice1.TabIndex = 7;
             // 
-            // button5
+            // buttonPriceReset
             // 
-            this.button5.Location = new System.Drawing.Point(87, 145);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "Сбросить";
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonPriceReset.Location = new System.Drawing.Point(87, 145);
+            this.buttonPriceReset.Name = "buttonPriceReset";
+            this.buttonPriceReset.Size = new System.Drawing.Size(75, 23);
+            this.buttonPriceReset.TabIndex = 6;
+            this.buttonPriceReset.Text = "Сбросить";
+            this.buttonPriceReset.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // buttonPriceAcept
             // 
-            this.button4.Location = new System.Drawing.Point(6, 145);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 5;
-            this.button4.Text = "Применить";
-            this.button4.UseVisualStyleBackColor = true;
+            this.buttonPriceAcept.Location = new System.Drawing.Point(6, 145);
+            this.buttonPriceAcept.Name = "buttonPriceAcept";
+            this.buttonPriceAcept.Size = new System.Drawing.Size(75, 23);
+            this.buttonPriceAcept.TabIndex = 5;
+            this.buttonPriceAcept.Text = "Применить";
+            this.buttonPriceAcept.UseVisualStyleBackColor = true;
             // 
-            // checkBox5
+            // checkBoxPrice5
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(6, 122);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(121, 17);
-            this.checkBox5.TabIndex = 4;
-            this.checkBox5.Text = "Прачечные услуги:";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkBoxPrice5.AutoSize = true;
+            this.checkBoxPrice5.Location = new System.Drawing.Point(6, 122);
+            this.checkBoxPrice5.Name = "checkBoxPrice5";
+            this.checkBoxPrice5.Size = new System.Drawing.Size(121, 17);
+            this.checkBoxPrice5.TabIndex = 4;
+            this.checkBoxPrice5.Text = "Прачечные услуги:";
+            this.checkBoxPrice5.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // checkBoxPrice4
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(6, 93);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(176, 17);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "Ручная чистка сумок и обуви:";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBoxPrice4.AutoSize = true;
+            this.checkBoxPrice4.Location = new System.Drawing.Point(6, 93);
+            this.checkBoxPrice4.Name = "checkBoxPrice4";
+            this.checkBoxPrice4.Size = new System.Drawing.Size(176, 17);
+            this.checkBoxPrice4.TabIndex = 3;
+            this.checkBoxPrice4.Text = "Ручная чистка сумок и обуви:";
+            this.checkBoxPrice4.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // checkBoxPrice3
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(6, 64);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(111, 17);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "Чистка игрушек:";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBoxPrice3.AutoSize = true;
+            this.checkBoxPrice3.Location = new System.Drawing.Point(6, 64);
+            this.checkBoxPrice3.Name = "checkBoxPrice3";
+            this.checkBoxPrice3.Size = new System.Drawing.Size(111, 17);
+            this.checkBoxPrice3.TabIndex = 2;
+            this.checkBoxPrice3.Text = "Чистка игрушек:";
+            this.checkBoxPrice3.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // checkBoxPrice2
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(6, 35);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(265, 17);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Чистка постельных принадлежностей, ковров:";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBoxPrice2.AutoSize = true;
+            this.checkBoxPrice2.Location = new System.Drawing.Point(6, 35);
+            this.checkBoxPrice2.Name = "checkBoxPrice2";
+            this.checkBoxPrice2.Size = new System.Drawing.Size(265, 17);
+            this.checkBoxPrice2.TabIndex = 1;
+            this.checkBoxPrice2.Text = "Чистка постельных принадлежностей, ковров:";
+            this.checkBoxPrice2.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // checkBoxPrice1
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 6);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(334, 17);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "Чистка одежды из замши, меха, кожи, текстиля, пуховиков:";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBoxPrice1.AutoSize = true;
+            this.checkBoxPrice1.Location = new System.Drawing.Point(6, 6);
+            this.checkBoxPrice1.Name = "checkBoxPrice1";
+            this.checkBoxPrice1.Size = new System.Drawing.Size(334, 17);
+            this.checkBoxPrice1.TabIndex = 0;
+            this.checkBoxPrice1.Text = "Чистка одежды из замши, меха, кожи, текстиля, пуховиков:";
+            this.checkBoxPrice1.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
@@ -454,16 +454,16 @@ namespace programmingWF2
             this.tabPage3.Controls.Add(this.label34);
             this.tabPage3.Controls.Add(this.label33);
             this.tabPage3.Controls.Add(this.label32);
-            this.tabPage3.Controls.Add(this.checkBox10);
+            this.tabPage3.Controls.Add(this.checkBoxCosts1);
             this.tabPage3.Controls.Add(this.checkBox9);
             this.tabPage3.Controls.Add(this.checkBox8);
             this.tabPage3.Controls.Add(this.checkBox7);
             this.tabPage3.Controls.Add(this.label36);
             this.tabPage3.Controls.Add(this.checkBox6);
             this.tabPage3.Controls.Add(this.textBox6);
-            this.tabPage3.Controls.Add(this.button7);
+            this.tabPage3.Controls.Add(this.buttonCostsAcept);
             this.tabPage3.Controls.Add(this.textBox7);
-            this.tabPage3.Controls.Add(this.button6);
+            this.tabPage3.Controls.Add(this.buttonCostsReset);
             this.tabPage3.Controls.Add(this.textBox8);
             this.tabPage3.Controls.Add(this.textBox10);
             this.tabPage3.Controls.Add(this.textBox9);
@@ -588,15 +588,15 @@ namespace programmingWF2
             this.label32.TabIndex = 30;
             this.label32.Text = "руб. / мес.";
             // 
-            // checkBox10
+            // checkBoxCosts1
             // 
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.Location = new System.Drawing.Point(7, 6);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(129, 17);
-            this.checkBox10.TabIndex = 17;
-            this.checkBox10.Text = "Фонд оплаты труда:";
-            this.checkBox10.UseVisualStyleBackColor = true;
+            this.checkBoxCosts1.AutoSize = true;
+            this.checkBoxCosts1.Location = new System.Drawing.Point(7, 6);
+            this.checkBoxCosts1.Name = "checkBoxCosts1";
+            this.checkBoxCosts1.Size = new System.Drawing.Size(129, 17);
+            this.checkBoxCosts1.TabIndex = 17;
+            this.checkBoxCosts1.Text = "Фонд оплаты труда:";
+            this.checkBoxCosts1.UseVisualStyleBackColor = true;
             // 
             // checkBox9
             // 
@@ -654,14 +654,14 @@ namespace programmingWF2
             this.textBox6.Size = new System.Drawing.Size(63, 20);
             this.textBox6.TabIndex = 28;
             // 
-            // button7
+            // buttonCostsAcept
             // 
-            this.button7.Location = new System.Drawing.Point(7, 204);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 22;
-            this.button7.Text = "Применить";
-            this.button7.UseVisualStyleBackColor = true;
+            this.buttonCostsAcept.Location = new System.Drawing.Point(7, 204);
+            this.buttonCostsAcept.Name = "buttonCostsAcept";
+            this.buttonCostsAcept.Size = new System.Drawing.Size(75, 23);
+            this.buttonCostsAcept.TabIndex = 22;
+            this.buttonCostsAcept.Text = "Применить";
+            this.buttonCostsAcept.UseVisualStyleBackColor = true;
             // 
             // textBox7
             // 
@@ -670,14 +670,14 @@ namespace programmingWF2
             this.textBox7.Size = new System.Drawing.Size(63, 20);
             this.textBox7.TabIndex = 27;
             // 
-            // button6
+            // buttonCostsReset
             // 
-            this.button6.Location = new System.Drawing.Point(88, 204);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 23;
-            this.button6.Text = "Сбросить";
-            this.button6.UseVisualStyleBackColor = true;
+            this.buttonCostsReset.Location = new System.Drawing.Point(88, 204);
+            this.buttonCostsReset.Name = "buttonCostsReset";
+            this.buttonCostsReset.Size = new System.Drawing.Size(75, 23);
+            this.buttonCostsReset.TabIndex = 23;
+            this.buttonCostsReset.Text = "Сбросить";
+            this.buttonCostsReset.UseVisualStyleBackColor = true;
             // 
             // textBox8
             // 
@@ -1043,25 +1043,25 @@ namespace programmingWF2
         private System.Windows.Forms.Label labelIncomeAvg;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label labelBalance;
-        private System.Windows.Forms.Label label99;
+        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox textBoxPrice5;
+        private System.Windows.Forms.TextBox textBoxPrice4;
+        private System.Windows.Forms.TextBox textBoxPrice3;
+        private System.Windows.Forms.TextBox textBoxPrice2;
+        private System.Windows.Forms.TextBox textBoxPrice1;
+        private System.Windows.Forms.Button buttonPriceReset;
+        private System.Windows.Forms.Button buttonPriceAcept;
+        private System.Windows.Forms.CheckBox checkBoxPrice5;
+        private System.Windows.Forms.CheckBox checkBoxPrice4;
+        private System.Windows.Forms.CheckBox checkBoxPrice3;
+        private System.Windows.Forms.CheckBox checkBoxPrice2;
+        private System.Windows.Forms.CheckBox checkBoxPrice1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
@@ -1078,16 +1078,16 @@ namespace programmingWF2
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.CheckBox checkBox10;
+        private System.Windows.Forms.CheckBox checkBoxCosts1;
         private System.Windows.Forms.CheckBox checkBox9;
         private System.Windows.Forms.CheckBox checkBox8;
         private System.Windows.Forms.CheckBox checkBox7;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.CheckBox checkBox6;
         private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button buttonCostsAcept;
         private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button buttonCostsReset;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox9;
