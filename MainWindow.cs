@@ -16,7 +16,7 @@ namespace programmingWF2
         {
             InitializeComponent();
         }
-        private void resetPrice()
+        private void resetPrice() /*Метод сброса услуг*/
         {
             checkBoxPrice1.Checked = false;
             checkBoxPrice2.Checked = false;
@@ -29,7 +29,7 @@ namespace programmingWF2
             textBoxPrice4.Text = "";
             textBoxPrice5.Text = "";
         }
-        private void resetCosts()
+        private void resetCosts() /*Метод сброса затрат*/
         {
             checkBoxCosts1.Checked = false;
             checkBoxCosts2.Checked = false;
@@ -48,7 +48,7 @@ namespace programmingWF2
             textBoxCosts7.Text = "";
             textBoxCosts8.Text = "";
         }
-        private void resetServicesArr(bool flag)
+        private void resetServicesArr(bool flag) /**/
         {
             ServicesArr.RemoveAll(x => x.type == flag);
         }

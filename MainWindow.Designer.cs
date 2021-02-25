@@ -948,7 +948,7 @@ namespace programmingWF2
             // buttonSave
             // 
             this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonSave.Location = new System.Drawing.Point(539, 291);
+            this.buttonSave.Location = new System.Drawing.Point(538, 290);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(250, 36);
             this.buttonSave.TabIndex = 2;
@@ -959,7 +959,7 @@ namespace programmingWF2
             // buttonLoad
             // 
             this.buttonLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonLoad.Location = new System.Drawing.Point(539, 332);
+            this.buttonLoad.Location = new System.Drawing.Point(538, 332);
             this.buttonLoad.Name = "buttonLoad";
             this.buttonLoad.Size = new System.Drawing.Size(250, 36);
             this.buttonLoad.TabIndex = 3;
