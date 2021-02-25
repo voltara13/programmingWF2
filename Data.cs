@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace programmingWF2
 {
-    //Специальный класс, созданный для сериализации
+    /*Специальный класс, созданный для сериализации*/
     [Serializable]
     public class Data
     {

@@ -29,6 +29,7 @@ namespace programmingWF2
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageIndicators = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -985,6 +986,7 @@ namespace programmingWF2
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tabControl1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainWindow";
             this.Text = "Химчистка";
             this.tabControl1.ResumeLayout(false);
