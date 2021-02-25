@@ -157,40 +157,49 @@ namespace programmingWF2
         {
             var listPrice = (ServicesArr.Where(elm => elm.type)).ToList();
             var listCosts = (ServicesArr.Where(elm => !elm.type)).ToList();
+
             if (listPrice.Count == 0 || listCosts.Count == 0)
             {
                 MessageBox.Show("Перед моделированием введите хотя бы по одной позиции прайс-листа и расходов");
                 return;
             }
 
-            double day = Convert.ToDouble(numericUpDown.Value);
+            int day = Convert.ToInt32(numericUpDown.Value);
+
             double sumPriceAll = 0;
-            double sumCostsAll = 0;
             double sumPriceMonth = 0;
+            double sumPriceToday = 0;
+            double sumCostsAll = 0;
+            double sumCostsMonth = 0;
             int sumClientAll = 0;
             int sumClientMonth = 0;
+            int sumClientToday = 0;
 
             richTextBox1.Text = "СИМУЛЯЦИЯ НАЧАЛАСЬ\n\n";
             for (int i = 1; i <= day; i++)
             {
-                int j = 0;
-                double sumPriceDay = 0;
+                sumClientToday = 0;
+                sumPriceToday = 0;
+
                 richTextBox1.AppendText($"ДЕНЬ {i}:\n");
-                for (; j < rand.Next(0, 10); j++)
+                for (; sumClientToday < rand.Next(0, 10); sumClientToday++)
                 {
                     var selectElm = listPrice[rand.Next(0, listPrice.Count)];
                     richTextBox1.AppendText($"Услуга: {selectElm.service}, цена: {selectElm.price} руб.\n");
-                    sumPriceDay += selectElm.price;
+                    sumPriceToday += selectElm.price;
                     selectElm.ChangeBalance();
                 }
-                richTextBox1.AppendText($"Выручка за день: {sumPriceDay}, количество клиентов за день: {j}\n");
-                sumPriceMonth += sumPriceDay;
-                sumClientMonth += j;
-                labelIncomeToday.Text = $"{sumPriceDay} руб.";
-                labelClientToday.Text = $"{j} чел.";
+                richTextBox1.AppendText($"Выручка за день: {sumPriceToday}, количество клиентов за день: {sumClientToday}\n");
+
+
+                sumPriceMonth += sumPriceToday;
+                sumClientMonth += sumClientToday;
+                sumPriceAll += sumPriceToday;
+                sumClientAll += sumClientToday;
+
                 if (i % 30 != 0) continue;
 
-                double sumCostsMonth = 0;
+                sumCostsMonth = 0;
                 richTextBox1.AppendText($"КОНЕЦ {i / 30} МЕСЯЦА\nРасходы:\n");
                 foreach (var selectElm in listCosts)
                 {
@@ -204,13 +213,7 @@ namespace programmingWF2
                                         $"Суммарно клиентов за месяц: {sumClientMonth}\n" +
                                         $"Суммарная прибыль за месяц: {sumPriceMonth - sumCostsMonth}\n");
 
-                labelIncomeMonth.Text = $"{sumPriceMonth} руб.";
-                labelCostsMonth.Text = $"{sumCostsMonth} руб.";
-                labelClientMonth.Text = $"{sumCostsMonth} руб.";
-
-                sumPriceAll += sumPriceMonth;
                 sumCostsAll += sumCostsMonth;
-                sumClientAll += sumClientMonth;
                 sumPriceMonth = 0;
                 sumClientMonth = 0;
             }
@@ -222,16 +225,24 @@ namespace programmingWF2
                                     $"Суммарная прибыль за всё время: {sumPriceAll - sumCostsAll}");
 
             labelIncomeAll.Text = $"{sumCostsAll} руб.";
-            labelCostsAll.Text = $"{sumCostsAll} руб.";
-            labelClientAll.Text = $"{sumClientAll} чел.";
+            labelIncomeMonth.Text = $"{sumPriceMonth} руб.";
+            labelIncomeToday.Text = $"{sumPriceToday} руб.";
             labelIncomeAvg.Text = $"{Math.Round(sumCostsAll / day)} руб.";
-            labelClientAvg.Text = $"{Math.Round(sumClientAll / day)} чел.";
+
+            labelClientAll.Text = $"{sumClientAll} чел.";
+            labelClientMonth.Text = $"{sumCostsMonth} чел.";
+            labelClientToday.Text = $"{sumClientToday} чел.";
+            labelClientAvg.Text = $"{sumClientAll / day} чел.";
+
+            labelCostsAll.Text = $"{sumCostsAll} руб.";
+            labelCostsMonth.Text = $"{sumCostsMonth} руб.";
+
             labelBalance.Text = $"{balance} руб.";
         }
         private void buttonReset_Click(object sender, EventArgs e)
         {
             balance = 0;
-            labelBalance.Text = "";
+            labelBalance.Text = "0 руб.";
             richTextBox1.Text = "";
 
             labelIncomeAll.Text = "0 руб.";
